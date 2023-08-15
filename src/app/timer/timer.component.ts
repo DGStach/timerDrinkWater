@@ -19,16 +19,19 @@ export class TimerComponent {
       }
     },1000)
   }
+  audio = new Audio();
 
   playAudio(){
-    let audio = new Audio();
-    audio.src = './pouringWater.mp3';
-    audio.load();
-    audio.play();
-/*
-    this.playAudio();
-*/
+    this.audio.src = "assets/water.mp3";
+    this.audio.play()
+      .then(()=>console.log("it works"))
+      .catch((err)=>console.log(`error log->`,err))
   }
+  stopAudio(){
+    this.audio.pause();
+    this.audio.currentTime = 0;
+  }
+
 
   pauseTimer() {
     clearInterval(this.interval);

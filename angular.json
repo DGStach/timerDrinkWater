@@ -27,7 +27,12 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "water.mp3",
+                "input": "src/app/timer",
+                "output": "assets/"
+              }
             ],
             "styles": [
               "src/styles.scss"
